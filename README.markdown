@@ -9,15 +9,15 @@ A test PSAS telemetry websocket deployed to heroku.
 
 ## Develop
 
-The websocket library depends on Python 3's `asyncio` module. Please use python 3.4 or better.
+The websocket library depends on Python 3's `asyncio` module. Please use python 3.5 or better.
 
 The best way to deal with dependencies in python is with [virtualenv][virtualenv]. If you've never used it before, you can read more about how it works here: <https://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/>
 
-Once you have `python3`, `pip`, and `virtualenvwrapper` installed, you can build this project.
+Once you have `python3.5`, `pip`, and `virtualenvwrapper` installed, you can build this project.
 
 To install everything you need for this project, create a new environment (you only need to do this once):
 
-    $ mkvirtualenv -p `which python3` telemetry
+    $ mkvirtualenv -p `which python3.5` telemetry
 
 Now you can install all the requirements:
 
