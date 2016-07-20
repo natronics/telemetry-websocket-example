@@ -1,18 +1,10 @@
-#!/usr/bin/env python
-import asyncio
-import websockets
+import uwsgi
 
 
-async def hello(websocket, path):
-    name = await websocket.recv()
-    print("< {}".format(name))
+def application(env, sr):
 
-    greeting = "Hello {}!".format(name)
-    await websocket.send(greeting)
-    print("> {}".format(greeting))
-
-
-if __name__ == '__main__':
-    start_server = websockets.serve(hello, 'localhost', 8765)
-    asyncio.get_event_loop().run_until_complete(start_server)
-    asyncio.get_event_loop().run_forever()
+    if env['PATH_INFO'] == '/':
+        uwsgi.websocket_handshake(env['HTTP_SEC_WEBSOCKET_KEY'], env.get('HTTP_ORIGIN', ''))
+        while True:
+            uwsgi.websocket_send(b"message")
+            yield uwsgi.async_sleep(1)
