@@ -2,6 +2,7 @@ PSAS Telemetry Websocket
 ========================
 
 ![Language: Python 3.4](https://img.shields.io/badge/language-python3-green.svg)
+[![Build Status](https://travis-ci.org/natronics/telemetry-websocket-example.svg?branch=master)](https://travis-ci.org/natronics/telemetry-websocket-example)
 
 A test PSAS telemetry websocket deployed to heroku.
 
