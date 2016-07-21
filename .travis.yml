@@ -7,4 +7,4 @@ python:
 install: "pip install -r requirements.txt"
 
 # smoketest for now
-script: echo "Ok"
+script: uwsgi --pyrun app.py
